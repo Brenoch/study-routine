@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Lista de Ingredientes</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="container">
+    <div class="left">
+        <h2>Seus Ingredientes</h2>
+        <button id="openModalBtn">Criar</button>
+
+        <!-- Cards vão aqui -->
+    </div>
+    <div class="right">
+        <h2>Gerador de Receitas</h2>
+        <p>
+            Claro! Por favor, me forneça a lista de ingredientes que você gostaria que eu usasse para criar a receita. Estou ansioso para ajudar! 😋🍽️
+        </p>
+        <p style="font-size: 0.8rem; color: gray;">Gerado em: 19/02/2025, 10:34:38</p>
+        <button style="margin-top: 10px;">CRIAR RECEITA</button>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal" id="itemModal">
+    <div class="modal-content">
+        <h3>Adicionar Ingrediente</h3>
+        <label for="itemName">Nome</label>
+        <input type="text" id="itemName" placeholder="Ex: Arroz" />
+
+        <label for="itemDescription">Descrição</label>
+        <input type="text" id="itemDescription" placeholder="Ex: Integral, tipo 1..." />
+
+        <div class="modal-actions">
+            <button onclick="closeModal()">Cancelar</button>
+            <button onclick="addItem()">Criar</button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

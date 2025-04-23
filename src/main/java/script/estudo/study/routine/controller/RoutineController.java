@@ -10,6 +10,8 @@ import java.util.List;
 @RequestMapping("/routine")
 public class RoutineController {
 
+
+
     private final RoutineService routineService;
 
     public RoutineController(RoutineService routineService) {
@@ -21,4 +23,18 @@ public class RoutineController {
 
     @PostMapping
     public Routine create(@RequestBody Routine routine) {return routineService.save(routine); }
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable Long id) {
+        routineService.delete(id);
+    }
+
+    @PutMapping("/{id}")
+    public Routine update(@PathVariable Long id, @RequestBody Routine updatedRoutine) {
+        Routine existing = routineService.getById(id);
+        existing.setName(updatedRoutine.getName());
+        existing.setDescription(updatedRoutine.getDescription());
+        return routineService.save(existing);
+    }
+
 }
